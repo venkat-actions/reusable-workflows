@@ -14,8 +14,18 @@ on:
 jobs:
   ci:
     runs-on: self-hosted
+    outputs:
+      appVersion: ${{ steps.package-version.outputs.version }}
     steps:
       - name: checkout the code 
         uses: actions/checkout@v6
       - name: Display the files
         run: ls -ltr
+
+      - name: Read version of package.json
+        id: package-version
+        run: echo "version =$(jq -r '.version' package.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Print app version
+        run: echo "${{ steps.package-version.outputs.version }}"
+        

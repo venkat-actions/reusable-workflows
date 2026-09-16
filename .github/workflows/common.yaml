@@ -28,4 +28,6 @@ jobs:
 
       - name: Print app version
         run: echo "appVersion is ${{ steps.package-version.outputs.version }}"
+      - name: install dependencies
+        run: npm install
         

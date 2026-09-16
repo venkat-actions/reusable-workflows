@@ -24,8 +24,8 @@ jobs:
 
       - name: Read version of package.json
         id: package-version
-        run: echo "version =$(jq -r '.version' package.json)" >> "$GITHUB_OUTPUT"
+        run: echo "version=$(jq -r '.version' package.json)" >> "$GITHUB_OUTPUT"
 
       - name: Print app version
-        run: echo ${{ steps.package-version.outputs.version }}
+        run: echo "appVersion is ${{ steps.package-version.outputs.version }}"
         

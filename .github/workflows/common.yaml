@@ -48,4 +48,4 @@ jobs:
       - name: docker push
         run: |
           aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 747639505780.dkr.ecr.us-east-1.amazonaws.com
-          docker push 747639505780.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue:${{ steps.app-version.outputs.version }}
+          docker push 747639505780.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue:${{ steps.package-version.outputs.version }}

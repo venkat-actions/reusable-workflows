@@ -5,9 +5,12 @@ on:
       project:
         required: true 
         type: string
-      environment:
+      component:
         required: true 
         type: string 
+      app_type:
+        required: true
+        type: string
 jobs:
   ci:
     runs-on: self-hosted

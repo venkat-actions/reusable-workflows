@@ -32,7 +32,7 @@ jobs:
         run: npm install
 
       - name: docker build
-        run: docker build -t 747639505780.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue:${{ steps.package-version.outputs.version }}
+        run: docker build -t 747639505780.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue:${{ steps.package-version.outputs.version }} .
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v5.0.0
         with:

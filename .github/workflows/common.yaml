@@ -1,0 +1,18 @@
+name: common-cicd
+on:
+  workflow_call:
+    inputs:
+      project:
+        required: true 
+        type: string
+      environment:
+        required: true 
+        type: string 
+jobs:
+  ci:
+    runs-on: self-hosted
+    steps:
+      - name: checkout the code 
+        uses: actions/checkout@v6
+      - name: Display the files
+        run: ls -ltr
